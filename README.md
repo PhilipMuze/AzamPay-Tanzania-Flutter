@@ -99,7 +99,7 @@ try {
 See the full working example in:
 
 ```yaml
-lib/example.dart
+example/example.dart
 ```
 
 ### 8 FAQ

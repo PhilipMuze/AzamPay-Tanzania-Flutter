@@ -1,4 +1,4 @@
-import 'package:azampaytanzania/azampay_tanzania.dart';
+import 'package:azampaytanzania/azampaytanzania.dart';
 import 'package:flutter/material.dart';
 
 /// Example of how to initiate a payment with AzamPesaTanzania SDK.
