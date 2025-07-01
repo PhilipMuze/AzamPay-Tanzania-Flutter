@@ -1,8 +1,8 @@
 name: azampaytanzania
 description: "Flutter SDK for AzamPesa Tanzania mobile money integration."
 version: 0.0.1
-homepage: "dssd"
-repository: https://github.com/yourusername/azampesa_tanzania 
+homepage: "https://github.com/PhilipMuze/AzamPay-Tanzania-Flutter"
+repository: https://github.com/PhilipMuze/AzamPay-Tanzania-Flutter
 
 environment:
   sdk: ^3.5.3
@@ -18,9 +18,6 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^4.0.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
 
-# The following section is specific to Flutter packages.
-flutter:
+
 

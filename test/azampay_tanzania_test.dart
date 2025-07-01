@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:azampesa_tanzania/azampay_tanzania.dart';
+import 'package:azampaytanzania/azampay_tanzania.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
