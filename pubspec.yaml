@@ -1,6 +1,6 @@
 name: azampaytanzania
 description: "Flutter SDK for AzamPesa Tanzania mobile money integration."
-version: 0.0.1
+version: 0.0.2
 homepage: "https://github.com/PhilipMuze/AzamPay-Tanzania-Flutter"
 repository: https://github.com/PhilipMuze/AzamPay-Tanzania-Flutter
 
