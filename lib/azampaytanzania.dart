@@ -63,12 +63,13 @@ class AzamPayTanzania {
     required String amount,
     required String externalId,
     required String provider,
-    String callbackUrl =
-        "https://sandbox.azampay.co.tz/api/v1/Checkout/Callback",
   }) async {
     if (_accessToken == null) {
       await generateToken();
     }
+    String callbackUrl = isProduction
+        ? "https://azampay.co.tz/api/v1/Checkout/Callback"
+        : "https://sandbox.azampay.co.tz/api/v1/Checkout/Callback";
 
     final String checkoutBaseUrl = isProduction
         ? 'https://azampay.co.tz'
