@@ -46,7 +46,7 @@ Add the dependency to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  azampay_tanzania: ^0.0.3
+  azampaytanzania: ^0.0.4
   ```
 
   ---
@@ -63,6 +63,7 @@ dependencies:
 
 ```yaml
 import 'package:azampaytanzania/azampaytanzania.dart';
+
 ```
 
 ---

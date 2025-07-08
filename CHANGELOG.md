@@ -11,3 +11,7 @@
 ## 0.0.3
 
 * Added implementation of Bank Account processing.
+
+## 0.0.4
+
+* Minor semantic improvements for clarity, consistency

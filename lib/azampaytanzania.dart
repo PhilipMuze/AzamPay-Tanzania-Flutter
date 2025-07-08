@@ -1,4 +1,4 @@
-library azampay_tanzania;
+library azampaytanzania;
 
 import 'dart:convert';
 
