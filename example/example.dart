@@ -16,7 +16,7 @@ void main() async {
 
   try {
     //Mobile money Collection.
-    final response = await azamPesa.collectPayment(
+    final response = await azamPesa.collectMnoPayment(
       accountNumber: '2557xxxxxxx',
       amount: '1000',
       externalId: 'TXN123456', // Unique transaction reference from your system
@@ -27,7 +27,9 @@ void main() async {
 
     //Bank checkout
     final bankResponse = await azamPesa.bankCheckout(
-      amount: 2332, //int 1000
+      referenceId: "Your Reference", //String Value
+      merchantName: "Merchant name", //String Value
+      amount: 2332, //Int Value 1000
       merchantAccountNumber: "merchantAccountNumber", //String Value
       merchantMobileNumber: "merchantMobileNumber", //String Value
       otp: "otp", //String Value

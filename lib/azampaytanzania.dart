@@ -12,7 +12,7 @@ class AzamPayTanzania {
   final String apiKey;
   final String appName;
   final bool isProduction;
-  String? _accessToken;
+  String? accessToken;
 
   /// Initialize with credentials from the AzamPay dashboard.
   AzamPayTanzania({
@@ -45,7 +45,7 @@ class AzamPayTanzania {
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
-      return _accessToken = data['data']['accessToken'];
+      return accessToken = data['data']['accessToken'];
     } else {
       throw Exception('Failed to generate token: ${response.body}');
     }
@@ -58,13 +58,13 @@ class AzamPayTanzania {
   /// [externalId] - Your internal reference for the transaction.
   /// [provider] - Mobile network provider (e.g. "Airtel", "Tigo" ,"Halopesa","Azampesa","Mpesa").
   /// Returns a response map from AzamPay.
-  Future<Map<String, dynamic>> collectPayment({
+  Future<Map<String, dynamic>> collectMnoPayment({
     required String accountNumber,
     required String amount,
     required String externalId,
     required String provider,
   }) async {
-    if (_accessToken == null) {
+    if (accessToken == null) {
       await generateToken();
     }
     String callbackUrl = isProduction
@@ -81,7 +81,7 @@ class AzamPayTanzania {
           url,
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer $_accessToken',
+            'Authorization': 'Bearer $accessToken',
             'X-API-Key': apiKey,
           },
           body: jsonEncode({
@@ -106,15 +106,15 @@ class AzamPayTanzania {
 
 //Bank Checkout
   Future<dynamic> bankCheckout({
-    required int amount, //int
-    required String merchantAccountNumber, //String
-    required String merchantMobileNumber, //String
-    required String otp, //String
-    required String provider, //"CRDB" "NMB"
-    String? merchantName, //string or null
-    String? referenceId, //	string or null
+    required int amount,
+    required String merchantAccountNumber,
+    required String merchantMobileNumber,
+    required String otp,
+    required String provider,
+    String? merchantName,
+    String? referenceId,
   }) async {
-    if (_accessToken == null) {
+    if (accessToken == null) {
       await generateToken();
     }
 
@@ -124,13 +124,14 @@ class AzamPayTanzania {
         ? 'https://azampay.co.tz/azampay/bank/checkout'
         : 'https://sandbox.azampay.co.tz/azampay/bank/checkout';
 
-    final url = Uri.parse('$checkoutBaseUrl/azampay/mno/checkout');
+    final url = Uri.parse(checkoutBaseUrl);
+
     final response = await http
         .post(
           url,
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer $_accessToken',
+            'Authorization': 'Bearer $accessToken',
             'X-API-Key': apiKey,
           },
           body: jsonEncode({
@@ -138,10 +139,10 @@ class AzamPayTanzania {
             "currencyCode": currencyCode,
             "merchantAccountNumber": merchantAccountNumber,
             "merchantMobileNumber": merchantMobileNumber,
-            "merchantName": merchantName,
+            "merchantName": merchantName ?? "",
             "otp": otp,
             "provider": provider,
-            "referenceId": referenceId,
+            "referenceId": referenceId ?? "",
           }),
         )
         .timeout(const Duration(seconds: 30));

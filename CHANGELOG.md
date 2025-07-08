@@ -7,3 +7,7 @@
 ## 0.0.2
 
 * Change in location of Example folder and syntax change
+
+## 0.0.3
+
+* Added implementation of Bank Account processing.
