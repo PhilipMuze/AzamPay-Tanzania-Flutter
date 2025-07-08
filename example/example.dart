@@ -15,14 +15,25 @@ void main() async {
   );
 
   try {
+    //Mobile money Collection.
     final response = await azamPesa.collectPayment(
       accountNumber: '2557xxxxxxx',
       amount: '1000',
       externalId: 'TXN123456', // Unique transaction reference from your system
       provider: "Airtel", // Other valid values: Airtel, Tigo, Halopesa, Mpesa
     );
-
+    //Respose print
     debugPrint('Payment response: $response');
+
+    //Bank checkout
+    final bankResponse = await azamPesa.bankCheckout(
+      amount: 2332, //int 1000
+      merchantAccountNumber: "merchantAccountNumber", //String Value
+      merchantMobileNumber: "merchantMobileNumber", //String Value
+      otp: "otp", //String Value
+      provider: "provider", //"CRDB" || "NMB" only
+    );
+    debugPrint('Payment response : $bankResponse');
   } catch (e) {
     debugPrint('Error: $e');
   }

@@ -102,4 +102,54 @@ class AzamPayTanzania {
       throw Exception('Failed to collect payment: ${response.body}');
     }
   }
+
+//Bank Checkout
+  Future<dynamic> bankCheckout({
+    required int amount, //int
+    required String merchantAccountNumber, //String
+    required String merchantMobileNumber, //String
+    required String otp, //String
+    required String provider, //"CRDB" "NMB"
+    String? merchantName, //string or null
+    String? referenceId, //	string or null
+  }) async {
+    if (_accessToken == null) {
+      await generateToken();
+    }
+
+    const currencyCode = 'TZS';
+
+    final String checkoutBaseUrl = isProduction
+        ? 'https://azampay.co.tz/azampay/bank/checkout'
+        : 'https://sandbox.azampay.co.tz/azampay/bank/checkout';
+
+    final url = Uri.parse('$checkoutBaseUrl/azampay/mno/checkout');
+    final response = await http
+        .post(
+          url,
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer $_accessToken',
+            'X-API-Key': apiKey,
+          },
+          body: jsonEncode({
+            "amount": amount,
+            "currencyCode": currencyCode,
+            "merchantAccountNumber": merchantAccountNumber,
+            "merchantMobileNumber": merchantMobileNumber,
+            "merchantName": merchantName,
+            "otp": otp,
+            "provider": provider,
+            "referenceId": referenceId,
+          }),
+        )
+        .timeout(const Duration(seconds: 30));
+
+    final responseBody = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      return responseBody;
+    } else {
+      throw Exception('Failed to collect payment: ${response.body}');
+    }
+  }
 }

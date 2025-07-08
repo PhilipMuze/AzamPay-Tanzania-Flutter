@@ -40,14 +40,18 @@ Add the dependency to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  azampay_tanzania: ^0.0.1
+  azampay_tanzania: ^0.0.2
   ```
-  
+
+  ---
+
 ### 3. Then Run
 
 ```yaml
  flutter pub get 
  ```
+
+---
 
 ### 4. Import the SDK
 
@@ -55,7 +59,9 @@ dependencies:
 import 'import 'package:azampaytanzania/azampay_tanzania.dart';';
 ```
 
-### 5 Initialize the SDk
+---
+
+### 5. Initialize the SDk
 
 ```yaml
 final azamPesa = AzamPayTanzania(
@@ -67,7 +73,9 @@ final azamPesa = AzamPayTanzania(
 );
 ```
 
-### 5 Collect Mobile Money Payments
+---
+
+### 6. Collect Mobile Money Payments
 
 ```yaml
 try {
@@ -78,13 +86,15 @@ try {
     provider: 'Azampesa', // Other options: Tigo, Airtel, Halopesa, Mpesa
   );
 
-  print('Payment response: $response');
+  debugPrint('Payment response: $response');
 } catch (e) {
-  print('Error: $e');
+  debugPrint('Error: $e');
 }
 ```
 
-### 6 Supported Mobile Providers
+---
+
+### 7. Supported Mobile Providers
 
 | Provider Name | Accepted Value |
 | ------------- | -------------- |
@@ -94,7 +104,9 @@ try {
 | HaloPesa      | `Halopesa`     |
 | M-Pesa        | `Mpesa`        |
 
-### 7 Example
+---
+
+### 8. Example
 
 See the full working example in:
 
@@ -102,7 +114,9 @@ See the full working example in:
 example/example.dart
 ```
 
-### 8 FAQ
+---
+
+### 9. FAQ
 
 How do I get credentials?
 Log in to the AzamPay Developer Portal and register your application to receive:
@@ -115,7 +129,9 @@ Client Secret
 
 API Key
 
-### 9 🤝 Contributing
+---
+
+### 10. 🤝 Contributing
 
 Fork the repo
 
@@ -125,10 +141,14 @@ Make changes and write tests
 
 Open a Pull Request
 
-We welcome improvements, bug fixes, and feature enhancements.
+We welcome improvements, bug fixes, and feature enhancements
 
-### 10 ⚠️ Disclaimer
+---
+
+### 11. ⚠️ Disclaimer
 
 This package is not officially affiliated with AzamPay. Use at your own discretion. Refer to AzamPay’s official documentation and API policies when deploying to production.
 
 For official docs: AzamPay Developer Portal
+
+---
