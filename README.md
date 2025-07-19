@@ -13,21 +13,21 @@ A Flutter/Dart SDK for integrating with the AzamPesa Mobile Money API in Tanzani
 - CRDB
 - NMB
 
-> ✅ Supports both **Sandbox** and **Production** environments.
+> Supports both **Sandbox** and **Production** environments.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔐 OAuth2 Token Generation
-- 💰 Mobile Money Checkout (Collect Payment)
-- 🏦 Bank Checkout (Collect Payment)
-- ⚙️ Simple Initialization with environment support
-- 🧪 Mockable and testable HTTP integration
+- OAuth2 Token Generation
+- Mobile Money Checkout (Collect Payment)
+- Bank Checkout (Collect Payment)
+- Simple Initialization with environment support
+- Mockable and testable HTTP integration
 
 ---
 
-## 🛠 Getting Started
+## Getting Started
 
 ### 1. Get Credentials
 
@@ -99,9 +99,9 @@ final azamPesa = AzamPayTanzania(
 
 #### Response for Mobile Money Payments
 
-- Status Code 200 : Success
+- Status Code `200` : Success
 
-``` yaml
+```yaml
 {
   "transactionId": "string",
   "message": "string",
@@ -109,7 +109,7 @@ final azamPesa = AzamPayTanzania(
 }
 ```
 
-- Status Code 400 : Bad Request
+- Status Code `400` : Bad Request
 
 ``` yaml
 {
@@ -173,7 +173,7 @@ final azamPesa = AzamPayTanzania(
 
 How to get CRDB OTP to activate your bank account
 
-- Dial *150*03# and Enter your SIM Banking PIN
+- Dial`*150*03#` and Enter your SIM Banking PIN
 
 - Press 7 other services
 
@@ -191,7 +191,7 @@ How to get CRDB OTP to activate your bank account
 
 How to get NMB OTP to activate your bank account
 
-- Dial *150*66#
+- Dial `*150*66#`
 
 - Press 8 More
 
@@ -201,7 +201,7 @@ How to get NMB OTP to activate your bank account
 
 #### Response for Bank Account Payments
 
-- Status Code 200 : Success
+- Status Code `200` : Success
 
 ``` yaml
 {
@@ -211,7 +211,7 @@ How to get NMB OTP to activate your bank account
 }
 ```
 
-- Status Code 400 : Bad Request
+- Status Code `400` : Bad Request
 
 ``` yaml
 {
@@ -255,7 +255,7 @@ Log in to the AzamPay Developer Portal and register your application to receive:
 
 ---
 
-### 13. 🤝 Contributing
+### 13.  Contributing
 
 - Fork the repo
 
@@ -273,8 +273,6 @@ Log in to the AzamPay Developer Portal and register your application to receive:
 
 This package is not officially affiliated with AzamPay. Use at your own discretion. Refer to AzamPay’s official documentation and API policies when deploying to production.
 
-> For official docs:
-
-- <https://developerdocs.azampay.co.tz/redoc>
+- For official docs:    [Azam Pay developer portal](https://developerdocs.azampay.co.tz/redoc)
 
 ---
