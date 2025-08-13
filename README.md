@@ -1,3 +1,5 @@
+[![Sponsor PhilipMuze](https://img.shields.io/badge/Sponsor-PhilipMuze-blue?logo=github)](https://github.com/sponsors/PhilipMuze)
+
 # AzamPay Tanzania
 
 A Flutter/Dart SDK for integrating with the AzamPesa Mobile Money API in Tanzania. This package provides a simple and developer-friendly interface for collecting mobile payments via various mobile network operators (MNOs), including:

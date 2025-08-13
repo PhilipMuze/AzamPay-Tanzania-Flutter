@@ -23,7 +23,7 @@ class AzamPayTanzania {
     required this.isProduction,
   });
 
-  /// Generate OAuth access token using client credentials.
+  // Generate OAuth access token using client credentials.
   Future<String> generateToken() async {
     //Change Based on the Environment Set by the user.
     final String authBaseUrl = isProduction
@@ -104,7 +104,7 @@ class AzamPayTanzania {
     }
   }
 
-//Bank Checkout
+  // Bank Checkout
   Future<dynamic> bankCheckout({
     required int amount,
     required String merchantAccountNumber,
